@@ -1,0 +1,168 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ekata Dangal</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #portfolio {
+            background-color: #ecd6b4;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #portfolio h1 {
+            color: #ff6f00;
+            font-size: 2.5rem;
+        }
+        #portfolio p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #efc0c0;
+        }
+        h1 {
+            margin: 20px 0;
+
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.2s;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #111;
+            color: white;
+        }
+
+        .slider {
+            width: 60%;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        video {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background: #00adb5;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #007b80;
+        }
+       
+          body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Ekata Dangal</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="portfolio">
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <p>Here are some of my recent projects. Stay tuned for more!</p>
+            <h2> Project 1: Image Slider</h2>
+            <div class="gallery">
+        <img src="/image/everest .jpg" alt="Image 1">
+        <img src="/image/kanchanjunga.jpg" alt="Image 2">
+        <img src="/image/makalu.jpg" alt="Image 3">
+        <img src="/image/lhotse.jpg" alt="Image 4">
+        <img src="/image/cho oyu.jpg" alt="Image 5">
+        <img src="/image/manaslu.jpg" alt="Image 6">
+        <img src="/image/dhaulagiri.jpg" alt="Image 7">
+        <img src="/image/annapurna .jpg" alt="Image 8">
+        <img src="/image/k2.jpg" alt="Image 9">
+    </div>
+    <h2>Video Slider</h2>
+
+    <div class="slider">
+        <video id="videoPlayer" controls>
+            <source src="video 1.mp4" type="video/mp4">
+        </video>
+
+        <div class="buttons">
+            <button onclick="prevVideo()">⏮ Prev</button>
+            <button onclick="nextVideo()">Next ⏭</button>
+        </div>
+    </div>
+
+    <script>
+        const videos = ["video 1.mp4", "video 2.mp4"];
+        let index = 0;
+
+        function showVideo() {
+            const player = document.getElementById("videoPlayer");
+            player.src = videos[index];
+            player.load();
+            player.play();
+        }
+
+        function nextVideo() {
+            index = (index + 1) % videos.length;
+            showVideo();
+        }
+
+        function prevVideo() {
+            index = (index - 1 + videos.length) % videos.length;
+            showVideo();
+        }
+    </script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Ekata Dangal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
